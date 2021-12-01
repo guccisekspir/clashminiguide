@@ -2,7 +2,7 @@
 
 import 'dart:async';
 
-enum NavBarItem { HOME, TIER, QUIZ, NOTIF, PROFILE }
+enum NavBarItem { HOME, TIER, PROFILE }
 
 class BottomNavBarBloc {
   final StreamController<NavBarItem> _navBarController = StreamController<NavBarItem>.broadcast();
@@ -23,14 +23,6 @@ class BottomNavBarBloc {
         currentIndex = i;
         break;
       case 2:
-        _navBarController.sink.add(NavBarItem.QUIZ);
-        currentIndex = i;
-        break;
-      case 3:
-        _navBarController.sink.add(NavBarItem.NOTIF);
-        currentIndex = i;
-        break;
-      case 4:
         _navBarController.sink.add(NavBarItem.PROFILE);
         currentIndex = i;
         break;

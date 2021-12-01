@@ -5,7 +5,15 @@
 import 'dart:convert';
 
 class Comps {
-  Comps({this.id, this.title, this.bannerPhotoUrl, this.tricks, this.mapPhotoUrl, this.isAdded, this.isPriced});
+  Comps(
+      {this.isHot,
+      this.id,
+      this.title,
+      this.bannerPhotoUrl,
+      this.tricks,
+      this.mapPhotoUrl,
+      this.isAdded,
+      this.isPriced});
 
   String? id;
   String? title;
@@ -14,12 +22,14 @@ class Comps {
   String? mapPhotoUrl;
   bool? isPriced;
   bool? isAdded;
+  bool? isHot;
 
   factory Comps.fromJson(String str) => Comps.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory Comps.fromMap(Map<String, dynamic> json) => Comps(
+        isHot: json["isHot"] == null ? false : json["isHot"],
         isPriced: json["isPriced"] == null ? false : json["isPriced"],
         isAdded: json["isAdded"] == null ? false : json["isAdded"],
         id: json["id"] == null ? null : json["id"],
@@ -30,6 +40,7 @@ class Comps {
       );
 
   Map<String, dynamic> toMap() => {
+        "isHot": id == null ? false : isHot,
         "isPriced": id == null ? false : isPriced,
         "isAdded": id == null ? false : isAdded,
         "id": id == null ? null : id,

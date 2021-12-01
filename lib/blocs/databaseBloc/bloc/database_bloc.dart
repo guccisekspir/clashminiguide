@@ -29,7 +29,7 @@ class DatabaseBloc extends Bloc<DatabaseEvent, DatabaseState> {
       } else if (event is GetComps) {
         emit(CompsLoading());
         try {
-          if (willTierList == null) {
+          if (willComps == null) {
             willComps = await databaseRepository.getComps();
             emit(CompsLoaded(willComps!));
           } else {

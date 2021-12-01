@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "178862027817",
+    "project_id": "clashminiguide",
+    "storage_bucket": "clashminiguide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178862027817:android:6d2355ddef61759adad838",
+        "android_client_info": {
+          "package_name": "com.sekspir.clashminiguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178862027817-js38l40vka62a175fprpbd9cc419vn82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU9XE9uD-zVeH2KilSWUi0ZSMmW8aCuw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178862027817-js38l40vka62a175fprpbd9cc419vn82.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178862027817-3robdusm4h60m2apkub3hqs3p40avlg4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sekspir.clashminiguide"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -67,7 +67,7 @@ class CompDetailPage extends StatelessWidget {
                   height: sizeHelper.height! * 0.075,
                   width: sizeHelper.width! * 0.5,
                   child: AutoSizeText(
-                    "Tricks",
+                    "tricks".tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.luckiestGuy(color: Colors.blue, fontSize: 40),
                   ),

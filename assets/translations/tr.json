@@ -2,5 +2,29 @@
     "0":"Öncelikle bunları geliştir",
     "1":"Yerlerini her tur değiştir",
     "2":"Mutlaka Level 2 yap",
-    "3":"Rakiplerden koru"
+    "3":"Rakiplerden koru",
+    "best_comps":"En İyi Takımlar",
+    "tricks":"Ipucuları",
+    "edit_banner_title":"Isminizi Yazın",
+    "image_save":"Banner cihazınıza kaydedildi !",
+    "nope_string":"Geri Dön",
+    "banner_title":"Fan Kartını Yap",
+    "banner_topic":"Mükemmel Banner",
+    "banner_sentences":"Banner yapmak için reklam izlemen gerekiyor",
+    "banner_ok_string":"Izle",
+    "write_nick":"Nickini Yaz",
+    "save":"Kaydet",
+    "skip":"Geç",
+
+    "page1_sentences1":"Kazananlar Takımına",
+    "page1_sentences2":"Hoşgeldin",
+
+    "page2_sentences1":"Bir sürü",
+    "page2_sentences2":"Pro Compları",
+
+    "page3_sentences1":"Tüm complara bak",
+    "page3_sentences2":"Tüm oyunları kazan",
+    "page3_sentences3":"Kazanan sen ol!"
+
+
 }

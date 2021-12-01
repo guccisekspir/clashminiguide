@@ -1,5 +1,5 @@
 name: clashminiguide
-description: A new Flutter project.
+description: Deck & Comp Guide App for Clash Mini
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,18 +37,23 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # UI
+  liquid_swipe: ^2.1.1
+  line_icons: ^2.0.1
   get_it: ^7.2.0
   flutter_bloc: ^8.0.0-dev.2
   equatable: ^2.0.3
   #convex_bottom_bar: ^3.0.0
   animated_bottom_navigation_bar: ^0.3.2
-  top_snackbar_flutter: ^1.0.1
+  top_snackbar_flutter: ^1.0.2
   rive: ^0.7.33
   easy_localization: ^3.0.0
   google_fonts: ^2.1.0
   auto_size_text: ^3.0.0
 
   #Technical
+  path_provider: ^2.0.7
+  screenshot: ^1.2.3
+  google_mobile_ads: ^1.0.0
   flutter_easyloading: ^3.0.3
   shared_preferences: ^2.0.8
   octo_image: ^1.0.0+1
@@ -60,7 +65,6 @@ dependencies:
   firebase_analytics: ^8.3.4
   cloud_firestore: ^3.1.0
 
-  firebase_crashlytics: ^2.3.0
   firebase_messaging: ^11.1.0
   flutter_local_notifications: ^9.1.4
 
@@ -68,6 +72,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^1.3.2
+  flutter_app_name: ^0.1.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -75,6 +81,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  
+flutter_app_name:
+  name: "Clash Mini Tactics"
 
 
 # For information on the generic Dart part of this file, see the

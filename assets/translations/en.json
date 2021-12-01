@@ -2,5 +2,33 @@
     "0":"Upgrade them first",
     "1":"Change their place every round",
     "2":"Make sure to Level 2",
-    "3":"Protect from opponents"
+    "3":"Protect from opponents",
+    "best_comps":"Best Team Comps",
+    "tricks":"Tricks",
+    "edit_banner_title":"Change the Banner Nickname",
+    "image_save":"Image is saved successfully",
+    "nope_string":"Back",
+    "banner_title":"Make Your Banner",
+    "banner_topic":"Fabulous Banner",
+    "banner_sentences":"You have to watch ad for achieve your own banners",
+    "banner_ok_string":"Watch",
+    "write_nick":"Your Nick",
+    "save":"Save Banner",
+    "skip":"Skip",
+
+    "page1_sentences1":"Welcome to the",
+    "page1_sentences2":"Winner Side",
+
+    "page2_sentences1":"A lot of",
+    "page2_sentences2":"Pro Decks",
+
+    "page3_sentences1":"Look all decks",
+    "page3_sentences2":"Win all Game",
+    "page3_sentences3":"Be Winner!"
+
+  
+    
+
+
+
 }

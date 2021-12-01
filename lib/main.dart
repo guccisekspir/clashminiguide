@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -11,6 +12,10 @@ void main() async {
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  MobileAds.instance.initialize();
+
+  MobileAds.instance
+      .updateRequestConfiguration(RequestConfiguration(testDeviceIds: ["84E809EDF0BEF25961F6196A69B56CF0"]));
 
   await Firebase.initializeApp();
 
@@ -27,7 +32,7 @@ void main() async {
 
   runApp(
     EasyLocalization(
-        supportedLocales: const [Locale('en'), Locale('tr')],
+        supportedLocales: const [Locale('en'), Locale('tr'), Locale('es')],
         useOnlyLangCode: true,
         path: 'assets/translations', // <-- change the path of the translation files
         child: App(
@@ -49,7 +54,7 @@ class App extends StatelessWidget {
         FirebaseAnalyticsObserver(analytics: analytics),
       ],*/
 
-      title: 'ClashMiniGuider',
+      title: 'ClashMiniGuide',
       localizationsDelegates: context.localizationDelegates,
       // <-- add this
       supportedLocales: context.supportedLocales,

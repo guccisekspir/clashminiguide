@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
 
 import 'package:rive/rive.dart' hide LinearGradient;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -229,10 +231,6 @@ class _NavigationPageState extends State<NavigationPage> with WidgetsBindingObse
                   create: (context) => DatabaseBloc(),
                   child: TierPage(),
                 );
-              case NavBarItem.QUIZ:
-                return QuizPage();
-              case NavBarItem.NOTIF:
-                return QuizPage();
               case NavBarItem.PROFILE:
                 return ProfilePage();
             }
@@ -253,7 +251,7 @@ class _NavigationPageState extends State<NavigationPage> with WidgetsBindingObse
 
               notchSmoothness: NotchSmoothness.softEdge,
               onTap: (index) => setState(() => {_bottomNavBarBloc.pickItem(index), bottomNavBarIndex = index}),
-              itemCount: 5,
+              itemCount: 3,
               tabBuilder: (int index, bool isActive) {
                 final color = isActive ? Colors.blue : Colors.black;
                 return Column(
@@ -283,9 +281,9 @@ class _NavigationPageState extends State<NavigationPage> with WidgetsBindingObse
     );
   }
 
-  List<IconData> iconList = [Icons.deck, Icons.leaderboard, Icons.quiz, Icons.ac_unit, Icons.verified_user];
+  List<IconData> iconList = [LineIcons.chessBoard, Icons.leaderboard, LineIcons.award];
 
-  List<String> navbarString = ["Decks", "TierList", "Quizes", "Quizes2", "Profile"];
+  List<String> navbarString = ["Decks", "Tier List", "Lab"];
 
   Future<void> sharedUserKaydet(String userID) async {
     SharedPreferences prefs;
