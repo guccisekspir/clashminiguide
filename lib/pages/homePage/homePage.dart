@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                                             builder: (context) => CompDetailPage(currentComp: currentComp)));
                                   }
                                 },
-                                child: Container(
+                                child: SizedBox(
                                   height: sizeHelper.height! * 0.2,
                                   width: sizeHelper.width! * 0.9,
                                   child: ClipRRect(
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Stack(
                                       children: [
                                         Center(
-                                          child: Container(
+                                          child: SizedBox(
                                             height: sizeHelper.height! * 0.2,
                                             width: sizeHelper.width! * 0.9,
                                             child: MiniNetworkImage(

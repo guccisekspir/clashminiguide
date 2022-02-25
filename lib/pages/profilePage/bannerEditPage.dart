@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:clashminiguide/helpers/sizeHelper.dart';
 
@@ -45,7 +42,7 @@ class _BannerEditPageState extends State<BannerEditPage> {
     String? path;
     final directory = (await getApplicationDocumentsDirectory()).path; //from path_provide package
     String fileName = DateTime.now().microsecondsSinceEpoch.toString();
-    path = '$directory';
+    path = directory;
 
     String? annen = await screenshotController.captureAndSave(path, //set path where screenshot will be saved
         fileName: fileName);
@@ -70,7 +67,7 @@ class _BannerEditPageState extends State<BannerEditPage> {
       Colors.lightBlueAccent,
       Colors.deepPurpleAccent
     ],
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+  ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   Widget build(BuildContext context) {

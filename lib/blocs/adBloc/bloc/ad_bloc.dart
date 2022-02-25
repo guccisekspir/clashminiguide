@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:clashminiguide/helpers/adHelper.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -59,42 +59,48 @@ class AdBloc extends Bloc<AdEvent, AdState> {
         //rewardedQuiz = event.rewardedQuiz;
         RewardedAd.load(
             adUnitId: AdHelper.rewardedAdUnitId,
-            request: AdRequest(),
+            request: const AdRequest(),
             rewardedAdLoadCallback: RewardedAdLoadCallback(
               onAdLoaded: (RewardedAd ad) {
-                print('$ad loaded show.');
+                if (kDebugMode) {
+                  print('$ad loaded show.');
+                }
                 // Keep a reference to the ad so you can show it later.
                 EasyLoading.dismiss();
-                this.rewardedAd = ad;
+                rewardedAd = ad;
                 rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
-                  onAdShowedFullScreenContent: (RewardedAd ad) => print('$ad onAdShowedFullScreenContent.'),
+                  onAdShowedFullScreenContent: (RewardedAd ad) => debugPrint('$ad onAdShowedFullScreenContent.'),
                   onAdDismissedFullScreenContent: (RewardedAd ad) {
-                    print('$ad aaaaaaaaonAdDismissedFullScreenContent.');
+                    if (kDebugMode) {
+                      print('$ad aaaaaaaaonAdDismissedFullScreenContent.');
+                    }
                     //this.emit(RewardEarned(DateTime.now().millisecondsSinceEpoch));
 
                     ad.dispose();
                   },
                   onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
-                    print('$ad onAdFailedToShowFullScreenContent: $error');
+                    if (kDebugMode) {
+                      print('$ad onAdFailedToShowFullScreenContent: $error');
+                    }
                     ad.dispose();
                     if (isRewarded) {
                       //this.emit(RewardEarned(DateTime.now().millisecondsSinceEpoch));
                       isRewarded = false;
                     }
                   },
-                  onAdImpression: (RewardedAd ad) => print('$ad impression occurred.'),
+                  onAdImpression: (RewardedAd ad) => debugPrint('$ad impression occurred.'),
                 );
                 rewardedAd!.show(onUserEarnedReward: (RewardedAd ad, RewardItem rewardItem) {
-                  print('oldu loaded show.');
+                  debugPrint('oldu loaded show.');
                   isRewarded = true;
 
-                  this.emit(RewardEarned(
+                  emit(RewardEarned(
                     DateTime.now().millisecondsSinceEpoch,
                   ));
                 });
               },
               onAdFailedToLoad: (LoadAdError error) {
-                print('RewardedAd failed to load: $error');
+                debugPrint('RewardedAd failed to load: $error');
               },
             ));
       }

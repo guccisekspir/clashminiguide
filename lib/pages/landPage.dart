@@ -80,14 +80,14 @@ class _LandPageState extends State<LandPage> {
 
           WidgetsBinding.instance!.addPostFrameCallback((_) {
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => WithPages()), (Route<dynamic> route) => false);
+                MaterialPageRoute(builder: (context) => const WithPages()), (Route<dynamic> route) => false);
           });
         } else {
           SizeHelper(fetchedContext: context);
 
           WidgetsBinding.instance!.addPostFrameCallback((_) {
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => NavigationPage()), (Route<dynamic> route) => false);
+                MaterialPageRoute(builder: (context) => const NavigationPage()), (Route<dynamic> route) => false);
           });
         }
       }
@@ -100,7 +100,7 @@ class _LandPageState extends State<LandPage> {
             width: MediaQuery.of(context).size.width,
             child: Container(
               color: Colors.amberAccent,
-              child: Text("A"),
+              child: const Text("A"),
             ),
           ),
         ),
@@ -134,6 +134,8 @@ class _LandPageState extends State<LandPage> {
 
 class WithPages extends StatefulWidget {
   static final style = GoogleFonts.luckiestGuy(color: Colors.white, fontSize: 30);
+
+  const WithPages({Key? key}) : super(key: key);
 
   @override
   _WithPages createState() => _WithPages();
@@ -280,13 +282,13 @@ class _WithPages extends State<WithPages> {
       ),
     );
     double zoom = 1.0 + (2.0 - 1.0) * selectedness;
-    return Container(
+    return SizedBox(
       width: 25.0,
       child: Center(
         child: Material(
           color: Colors.white,
           type: MaterialType.circle,
-          child: Container(
+          child: SizedBox(
             width: 8.0 * zoom,
             height: 8.0 * zoom,
           ),
@@ -302,7 +304,7 @@ class _WithPages extends State<WithPages> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Container(
+          SizedBox(
             width: sizeHelper.width,
             height: sizeHelper.height,
             child: LiquidSwipe(
@@ -319,10 +321,10 @@ class _WithPages extends State<WithPages> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: <Widget>[
-                Expanded(child: SizedBox()),
+                const Expanded(child: SizedBox()),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List<Widget>.generate(pages.length, _buildDot),
@@ -336,8 +338,8 @@ class _WithPages extends State<WithPages> {
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context)
-                      .pushAndRemoveUntil(MaterialPageRoute(builder: (context) => NavigationPage()), (route) => false);
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => const NavigationPage()), (route) => false);
                 },
                 child: ConstrainedBox(
                   constraints: BoxConstraints(

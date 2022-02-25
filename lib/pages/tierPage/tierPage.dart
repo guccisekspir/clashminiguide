@@ -19,7 +19,7 @@ class TierPage extends StatelessWidget {
     DatabaseBloc databaseBloc = BlocProvider.of<DatabaseBloc>(context);
     databaseBloc.add(GetTierList(dateTime: DateTime.now()));
 
-    return Container(
+    return SizedBox(
       width: sizeHelper.width,
       height: sizeHelper.height,
       child: BlocBuilder(
@@ -35,7 +35,7 @@ class TierPage extends StatelessWidget {
                 height: sizeHelper.height,
                 width: sizeHelper.width,
                 child: SafeArea(
-                  child: Container(
+                  child: SizedBox(
                     height: sizeHelper.height,
                     width: sizeHelper.width,
                     child: Column(
@@ -124,7 +124,7 @@ class TierPage extends StatelessWidget {
                       SizedBox(
                         height: sizeHelper.height! * 0.4,
                       ),
-                      Text("Hata oluştu sonra tekrar deneyin"),
+                      const Text("Hata oluştu sonra tekrar deneyin"),
                       IconButton(
                           onPressed: () {
                             databaseBloc.add(GetTierList(dateTime: DateTime.now()));

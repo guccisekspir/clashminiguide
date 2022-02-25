@@ -2,7 +2,8 @@ part of 'ad_bloc.dart';
 
 abstract class AdEvent extends Equatable {
   const AdEvent();
-  List<Object?> get props => throw UnimplementedError();
+  @override
+  List<Object?> get props => [];
 }
 
 class InitializeIntersAd extends AdEvent {}

@@ -1,7 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clashminiguide/helpers/sizeHelper.dart';
-import 'package:clashminiguide/helpers/themeHelper.dart';
 import 'package:clashminiguide/models/comps.dart';
 import 'package:clashminiguide/widgets/miniImageWidget.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +13,9 @@ class CompDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeHelper sizeHelper = SizeHelper();
-    ThemeHelper themeHelper = ThemeHelper();
+    //ThemeHelper themeHelper = ThemeHelper();
 
-    return Container(
+    return SizedBox(
       height: sizeHelper.height,
       width: sizeHelper.width,
       child: SafeArea(
@@ -50,7 +48,7 @@ class CompDetailPage extends StatelessWidget {
                     style: GoogleFonts.luckiestGuy(color: Colors.blue, fontSize: 40),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: sizeHelper.height! * 0.6,
                   width: sizeHelper.width! * 0.8,
                   child: ClipRRect(
@@ -80,7 +78,7 @@ class CompDetailPage extends StatelessWidget {
                         Trick currentTrick = currentComp.tricks![index];
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
+                          child: SizedBox(
                             height: sizeHelper.height! * 0.05,
                             child: Row(
                               children: [

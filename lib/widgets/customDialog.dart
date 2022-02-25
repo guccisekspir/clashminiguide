@@ -37,10 +37,10 @@ class CustomDialog extends StatelessWidget {
       child: Dialog(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(60)),
         ),
-        insetPadding: EdgeInsets.symmetric(horizontal: 40),
+        insetPadding: const EdgeInsets.symmetric(horizontal: 40),
         child: Builder(
           builder: (context) {
             return SizedBox(

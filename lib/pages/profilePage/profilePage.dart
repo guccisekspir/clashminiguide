@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:clashminiguide/blocs/adBloc/bloc/ad_bloc.dart';
-import 'package:clashminiguide/data/databaseApiClient.dart';
 import 'package:clashminiguide/helpers/listHelper.dart';
 import 'package:clashminiguide/helpers/sizeHelper.dart';
 import 'package:clashminiguide/helpers/themeHelper.dart';
@@ -43,11 +42,10 @@ class _ProfilePageState extends State<ProfilePage> {
       Colors.lightBlueAccent,
       Colors.deepPurpleAccent
     ],
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+  ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   Widget build(BuildContext context) {
-    DatabaseApiClient databaseApiClient = getIt<DatabaseApiClient>();
     /*databaseApiClient.saveComps(Comps(
         title: "Powerfull Archer Queen Deck",
         bannerPhotoUrl:

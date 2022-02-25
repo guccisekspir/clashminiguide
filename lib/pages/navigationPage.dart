@@ -8,14 +8,10 @@ import 'package:clashminiguide/helpers/sizeHelper.dart';
 import 'package:clashminiguide/helpers/themeHelper.dart';
 import 'package:clashminiguide/pages/homePage/homePage.dart';
 import 'package:clashminiguide/pages/profilePage/profilePage.dart';
-import 'package:clashminiguide/pages/quizPage/quizPage.dart';
 import 'package:clashminiguide/pages/tierPage/tierPage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 
 import 'package:rive/rive.dart' hide LinearGradient;
@@ -209,8 +205,6 @@ class _NavigationPageState extends State<NavigationPage> with WidgetsBindingObse
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey _curvedKey = GlobalKey();
-
     return Scaffold(
       backgroundColor: Colors.black,
       //Safe areada ne gözükmesini istiyorsan onu yapmak gerekiyor
@@ -224,15 +218,15 @@ class _NavigationPageState extends State<NavigationPage> with WidgetsBindingObse
               case NavBarItem.HOME:
                 return BlocProvider(
                   create: (context) => DatabaseBloc(),
-                  child: HomePage(),
+                  child: const HomePage(),
                 );
               case NavBarItem.TIER:
                 return BlocProvider(
                   create: (context) => DatabaseBloc(),
-                  child: TierPage(),
+                  child: const TierPage(),
                 );
               case NavBarItem.PROFILE:
-                return ProfilePage();
+                return const ProfilePage();
             }
           }
           return Container();
