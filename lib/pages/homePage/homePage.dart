@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           bloc: adBloc,
           listener: (context, state) {
             if (state is RewardEarned) {
-              debugPrint(" AAAAAASDCASDCASDCASDCASDCASDCASDCASDAS earned");
+              debugPrint("earned");
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => CompDetailPage(currentComp: clickedCurrentComp!)));
             }
